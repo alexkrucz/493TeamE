@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Team E MBA Classification Demo</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+<!-- Custom styles for this template -->
+<link href="css/landing-page.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Team E</a>
+          <a class="btn btn-primary" href="#">Sign In</a>
+        </div>
+      </nav>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Watson Natural Language Classifier</h1>
+        <p>Demo for COMM493 that uses the NLC service to analyze Queen's MBA applications.</p>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Main Content Container -->
+        <div class="row">
+          <!-- Using BS Grid System -->
+          <div class="col-md-8 ">
+            <!-- Display welcome Form to the user -->
+              <div class="form-group">
+                <label for="comment_query">Application to Analyze:</label>
+                <textarea class="form-control" rows="10" cols="40" id="comment_query"></textarea>
+              </div>
+              <button id="analyze_text" class="btn btn-block btn-primary">Analyze!</button>
+          </div>
+          <div class="col-md-4">
+            <h4>Instructions</h4>
+            <p>
+              This application uses the NLC service to analyze Queen's MBA applications and return the results in a concise and easy to understand manner. 
+            </p>
+            <p>
+              Enter in the text on the left hand side for analysis, or upload files using the button below. When you are finished, press the analyze button for results.
+            </p>
+            <p>
+              <a href="#" class="btn btn-success btn-block random-comment">Upload</a>
+            </p>
+          </div>
+          <!-- End of welcome message + submission form -->
+        </div>
+        <hr>
+        <div id="loader" class='container'>
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="result_text"></div>
+          </div>
+          <div class="col-md-4">
+            <!-- List of the Resulting Class Predictions -->
+            <ul id="results" class='list-group'></ul>
+          </div>
+        </div>
+
+      <!-- End of Main Content Container -->
+    </div>
+     <!-- Call to Action -->
+     <section class="call-to-action text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <h2 class="mb-4">Keep in touch! Sign up now!</h2>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+              <form>
+                <div class="form-row">
+                  <div class="col-12 col-md-9 mb-2 mb-md-0">
+                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                  </div>
+                  <div class="col-12 col-md-3">
+                    <button onclick="alert('Thank you for submitting your email!')" type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    <!-- Footer -->
+    <footer class="footer bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="analyze.html">Analyze</a>
+                </li>
+                <li class="list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="https://goo.gl/forms/qWfLWSMQEuBLodVs2">Feedback</a>
+                </li>
+                <li class="list-inline-item">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="#">Privacy Policy</a>
+                </li>
+              </ul>
+              <p class="text-muted small mb-4 mb-lg-0">&copy; Team E 2018. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                  <a href="https://www.facebook.com/SmithBusiness/?ref=br_rs">
+                    <i class="fa fa-facebook fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="https://twitter.com/smithbusiness?lang=fr">
+                    <i class="fa fa-twitter fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/smithbusiness/">
+                    <i class="fa fa-instagram fa-2x fa-fw"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="static/js/main.js"></script>
+     <!-- Bootstrap core JavaScript -->
+     <script src="vendor/jquery/jquery.min.js"></script>
+     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+  
+  </body>
+
+  
+</html>
